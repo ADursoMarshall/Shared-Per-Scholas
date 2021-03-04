@@ -3,6 +3,7 @@
 # Rock, paper, scissors to practice defining functions and more loops
 # We will need to import random to choose R,P,S for the computer
 
+
 options = ["rock", "paper", "scissors"]
 #This function selects the rock, paper, scissors for the computer
 def comp():
@@ -21,6 +22,7 @@ def chal():
 
 
 def game():
+    import sys
     compB = comp() #call function for computer's option
     chalA = chal() #call function for user selection
     #define outcome strings
@@ -28,16 +30,22 @@ def game():
     yLose = "Sorry, better luck next time."
     #ensure that the user input is valid, and limits the number of time the user can enter an invalid input
     notValid = True 
-    count = 0
+    count = 1
     options = ["rock", "paper", "scissors"]
     while notValid == True:
         if chalA in options:
             notValid = False
         elif count < 3:
+            print("That is not a valid choice.")
             chalA = chal()
             count = count +1
         else:
             print("We can play later.")
+            break
+
+    if notValid == True:
+        return()
+              
 # this loop removes ties, by having the computer opponent get a new value if 
 #the input and computer's selection are the same.
     while compB == chalA:
@@ -61,15 +69,15 @@ def game():
     #I made the game function recursive
     again = input("would you like to play again? (yes or no): ")
     again = again.lower()
-    if again == "yes":
+    if again == "yes" or again == "y":
         game()
     else:
         print("Ok, Goodbye.")
 
 play = input("Would you like to play a game? (type yes or no): ")
 play = play.lower()
-if play == "yes":
+if play == "yes" or play == "y":
     game()
 else:
     print("Ok, goodbye.")
-
+    
