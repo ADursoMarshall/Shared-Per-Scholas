@@ -3,7 +3,7 @@
 '''Lab 7. The first 3 lines are the solution from the Vocareum lab (although I changes the value). 
 I decide to present the data sorted into lists by type to be more readable.'''
 print("Original solution:")
-myMixedBagList = [42, 1963, 10001011, True, "Yo!", "42", 3.14159]
+myMixedBagList = [42, 1963, 10001011, True, "Yo!", "42", 3.14159, "pi"]
 for item in myMixedBagList:
     print("{} is of data type{}.".format(item,type(item)))
 print()    
